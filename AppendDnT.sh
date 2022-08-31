@@ -8,12 +8,13 @@
 #                               appends the current date and time to the filename
 
 # main
-# creates the variable date to be ammended later
-date=$(date +"-%Y_%m_%d")
+# creates the variable date to be ammended later with ISO 8601 format
+date=$(date +"-%Y-%m-%dT%H:%M:%S%z")
 # copies the syslog file to the current directory w/ statement telling user of stage
 echo `date` " Copying files to the current directory"
 cp /var/log/syslog .
-# renames the syslog file with the date ammended w/ statement telling user of stage
+# renames the syslog file with the date ammended w/ statement telling user of stage 
+# "-i" flag prompts confirmation before overwritting a file if one were to perform this task more than once
 echo `date` " Adding date to syslog filename"
-mv syslog syslog$date
+mv -i syslog syslog$date
 # end
