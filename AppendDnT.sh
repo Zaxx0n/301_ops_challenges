@@ -10,10 +10,10 @@
 # main
 # creates the variable date to be ammended later
 date=$(date +"-%Y_%m_%d")
-# copies the syslog file to the current directory
-echo `date` " Copying files to current directory"
+# copies the syslog file to the current directory w/ statement telling user of stage
+echo `date` " Copying files to the current directory"
 cp /var/log/syslog .
-# renames the syslog file with the date ammended
-echo `date` " Adding date to syslog"
+# renames the syslog file with the date ammended w/ statement telling user of stage
+echo `date` " Adding date to syslog filename"
 mv syslog syslog$date
 # end
