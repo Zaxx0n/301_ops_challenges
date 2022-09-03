@@ -8,10 +8,11 @@
 # Define Variables and Colors
 BIRed='\033[1;91m'        # Red
 NC='\033[0m'              # No Color
+Purp='\033[0;35m'
 msg="Which log should be sent to the void?"
 
 # Define Arrays
-opt=("syslog"  "wtmp" "other" "exit")
+log=("syslog"  "wtmp" "other" "exit")
 
 # Define Functions
 
@@ -28,28 +29,28 @@ refresh(){
     # the -e in echo allows echo to interpret the \n command
 echo -e "\n$msg"
     # a for loop that is dynamic
-for ((i = 0; i < ${#opt[@]}; i++))
+for ((i = 0; i < ${#log[@]}; i++))
 do
-        echo "$((i+1))) ${opt[$i]}"
+        echo "$((i+1))) ${log[$i]}"
 done
 }
 echo $msg
-select i in ${opt[@]}
+select i in ${log[@]}
 do
         case $i in
-                        ${opt[0]})
+                        ${log[0]})
                                 $clear_log > /var/log/syslog
                                 refresh;;
-                        ${opt[1]})
+                        ${log[1]})
                                 $clear_log > /var/log/wtmp
                                 refresh;;
-                        ${opt[2]})
-                                echo "enter path of file to be wiped"
+                        ${log[2]})
+                                echo -e "Enter path of file to be wiped:\n"
                                 read void
                                 $clear_log > $void
                                 refresh;;
-                        ${opt[3]})
-                                echo "Beware, the void is ever present."
+                        ${log[3]})
+                                printf ${Purp}"Beware, the void is ever present.    ༼✧!✧༽${NC}\n"
                                 break;;
                         *)
                                 echo -e ${BIRed}"That is not an option.${NC}"
