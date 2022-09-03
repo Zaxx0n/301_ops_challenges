@@ -16,7 +16,7 @@ log=("syslog"  "wtmp" "other" "exit")
 
 # Define Functions
 
- clear_log() {
+ void_caller() {
     cat $1
     cat /dev/null > $1
     cat $1
@@ -39,15 +39,15 @@ select i in ${log[@]}
 do
         case $i in
                         ${log[0]})
-                                $clear_log > /var/log/syslog
+                                $void_caller > /var/log/syslog
                                 refresh;;
                         ${log[1]})
-                                $clear_log > /var/log/wtmp
+                                $void_caller > /var/log/wtmp
                                 refresh;;
                         ${log[2]})
                                 echo -e "Enter path of file to be wiped:\n"
                                 read void
-                                $clear_log > $void
+                                $void_caller > $void
                                 refresh;;
                         ${log[3]})
                                 printf ${Purp}"Beware, the void is ever present.    ༼✧!✧༽${NC}\n"
