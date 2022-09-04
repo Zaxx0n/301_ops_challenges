@@ -18,3 +18,4 @@ cp /var/log/syslog .
 echo `date` " Adding date to syslog filename"
 mv -i syslog syslog$date
 # end
+#
