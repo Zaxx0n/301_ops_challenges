@@ -3,9 +3,9 @@
 # Script:                       Ops 301 Class 05 Ops Challenge: Append; Date and Time
 # Author:                       Zachary Derrick
 # Date of latest revision:      8/30/2022
-# Purpose:                      Write a script that uses /dev/null to wipe information
-#                               Copies /var/log/syslog to the current working directory and
-#                               appends the current date and time to the filename
+# Purpose:                    Copies /var/log/syslog to the current working directory and
+#                              appends the current date and time to the filename
+#                               
  
 # main
 # creates the variable date to be appended later with ISO 8601 format
