@@ -1,0 +1,1 @@
+New-ADUser -Name "Franz Ferdinand" -Department "TPS" -Company "GlobeX USA" -Location "Springfield, OR" -UserPrincipalName "ferdi@GlobeXpower.com"
