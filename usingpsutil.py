@@ -14,7 +14,7 @@ fetchedinfo = [["Time spent by normal processes executing in user mode: ", cpust
     ["Time when system was idle: ", cpustuff[2]], ["Time spent by priority process exectuing in user mode: ", cpustuff[3]], ["Time spent waiting for I/O to complete: ", cpustuff[4]],
     ["Time spent for servicing hardware interrupts: ", cpustuff[5]], ["Time spent for servicing software interrupts: ", cpustuff[6]],
     ["Time spent by other operating systems running in a virtualized environment: ", cpustuff[7]], ["Time spent running a virtual CPU for guest operating systems under the control of the Linux kernal", cpustuff[8]]]
-
+# main 
 with open('psutilcputimes.txt', "w") as f:
     for pretty in fetchedinfo:
         print(pretty[0] + str(pretty[1]), file=f)
