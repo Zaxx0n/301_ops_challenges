@@ -14,9 +14,13 @@
 import requests
 
 
+# variables
+greeting = print("Zaxxon's Python Request Library Scrip v.0 \nPlease enter a URL to make reqeusts: ")
+adrs =input()
+
+
+# functions
 def requestlib():
-    print("Please enter a destination URL for GET Reqeust: ")
-    adrs =input()
     getr = requests.get(adrs)
     postr = requests.post(adrs, data={'key':'value'})
     putr = requests.put(adrs, data={'key':'value'})
@@ -25,8 +29,7 @@ def requestlib():
     patch = requests.patch(adrs, data={'key':'value'})
     options = requests.options(adrs)
     
-# functions 
-# answer = yes_or_no()
+# menu(1)    
 def menu():
     print("[1] STATUS CODE")
     print("[2] POST")
@@ -36,9 +39,13 @@ def menu():
     print("[6] PATCH")
     print("[7] OPTIONS")
     print("[0] EXIT")
+    print("\n Select the request type you'd like to perform.")
+ 
+# answer = yes_or_no()
 
 
 
+greeting
 requestlib
 menu()
 option = int(input("Please Select the Request Type: ")) 
