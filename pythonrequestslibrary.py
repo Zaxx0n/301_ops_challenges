@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # Script: Ops 301 Class 13 Ops Psutil
 # Author: Zachary Derrick                    
-# Date of latest revision:  9/15/22    
+# Date of latest revision:  9/16/22    
 # Purpose: A Python script that prompts the user to type a string input as the variable for your destination URL.
 #           Prompt the user to select a HTTP Method 
 #           Print to the screen the entire request your script is about to send. Ask the user to confirm before proceeding
@@ -13,15 +13,19 @@
 # import modules 
 import requests
 
-
 # variables
-greeting = print("Zaxxon's Python Request Library Scrip v.0 \nPlease enter a URL to make reqeusts: ")
+
+greeting = print("Zaxxon's Python Request Library Script v.1\nPlease enter a URL to make reqeusts: ")
+
 adrs =input()
+
+response = requests.get(adrs)
+
+reqtype = int(input("\nSelect the request type you'd like to perform.")) 
 
 
 # functions
 def requestlib():
-    getr = requests.get(adrs)
     postr = requests.post(adrs, data={'key':'value'})
     putr = requests.put(adrs, data={'key':'value'})
     delete = requests.delete(adrs)
@@ -39,30 +43,30 @@ def menu():
     print("[6] PATCH")
     print("[7] OPTIONS")
     print("[0] EXIT")
-    print("\n Select the request type you'd like to perform.")
+    
  
 # answer = yes_or_no()
 
-
+# main body of code
 
 greeting
 requestlib
 menu()
-option = int(input("Please Select the Request Type: ")) 
+reqtype
 
-while option != 0:
-    if option == 1:
-        if getr.status_code == 200:
-            print('Success!')
+while reqtype != 0:
+    if reqtype == 1:
+        if response.status_code == 200:
+            print('Yep, that is a real website.')
         elif response.status_code == 404:
-            print('Not Found.')
+            print('Site Not Found.')
     if option == 2:
              postr   
     else:
         print("Please select again: ")
     print()        
     menu()
-    option = int(input("Please Select the Request Type: ")) 
+    option 
 
 
 
