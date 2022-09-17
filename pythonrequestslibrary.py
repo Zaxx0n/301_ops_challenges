@@ -15,24 +15,23 @@ import requests
 
 # variables
 
-greeting = print("Zaxxon's Python Request Library Script v.1\nPlease enter a URL to make reqeusts: ")
+adrs = input("Zaxxon's Python Request Library Script v.1\nPlease enter a URL to make reqeusts: ")
 
-adrs =input()
+
 
 response = requests.get(adrs)
+postr = requests.post(adrs, data={'key':'value'})
+putr = requests.put(adrs, data={'key':'value'})
+delete = requests.delete(adrs)
+headr = requests.head(adrs)
+patch = requests.patch(adrs, data={'key':'value'})
+options = requests.options(adrs)
 
-reqtype = int(input("\nSelect the request type you'd like to perform.")) 
+ 
 
 
 # functions
-def requestlib():
-    postr = requests.post(adrs, data={'key':'value'})
-    putr = requests.put(adrs, data={'key':'value'})
-    delete = requests.delete(adrs)
-    headr = requests.head(adrs)
-    patch = requests.patch(adrs, data={'key':'value'})
-    options = requests.options(adrs)
-    
+   
 # menu(1)    
 def menu():
     print("[1] STATUS CODE")
@@ -43,30 +42,30 @@ def menu():
     print("[6] PATCH")
     print("[7] OPTIONS")
     print("[0] EXIT")
-    
+    int(input("\nSelect the request type you'd like to perform."))
  
 # answer = yes_or_no()
 
 # main body of code
 
-greeting
-requestlib
-menu()
-reqtype
+adrs
 
-while reqtype != 0:
-    if reqtype == 1:
+menu()
+
+
+while int != 0:
+    if int == 1:
         if response.status_code == 200:
-            print('Yep, that is a real website.')
+            print('Yep, that\'s a real website.')
         elif response.status_code == 404:
             print('Site Not Found.')
-    if option == 2:
+    if int == 2:
              postr   
     else:
         print("Please select again: ")
     print()        
     menu()
-    option 
+    
 
 
 
