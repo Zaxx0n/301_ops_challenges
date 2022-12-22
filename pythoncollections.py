@@ -7,7 +7,7 @@ pirates = ["Stede", "Blackbeard", "Izzy", "Jim", "Buttons", "Frenchie", "Oluwand
 # Main
 
 print(pirates[3])
-print(pirates[5:9])
+print(pirates[5:10])
 pirates[6] = "onion"
 # print(pirates[6])
 # End 
